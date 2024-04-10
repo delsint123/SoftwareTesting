@@ -1,3 +1,5 @@
+import java.io.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -5,8 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import com.beust.ah.A;
 
 public class Home {
     WebDriver driver = new ChromeDriver();
@@ -24,15 +24,22 @@ public class Home {
     }
 
     @Test
-    void DownloadButton() {
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div[1]/a/img[1]")).click();
+    void DownloadButton() throws InterruptedException {
+        //Change path depending on your file directory
+        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File[] files = downloadDir.listFiles();
+        
+        driver.findElement(By.xpath("//*[@id='landing-cta']/div/a")).click();
+
+        File[] afterFiles = downloadDir.listFiles();
+
+        Assert.assertEquals(afterFiles.length, files.length + 1);
     }
 
     @Test
     //need to be logged in to conduct this test
     void OpenInBrowser() throws InterruptedException {
         driver.findElement(By.xpath("//*[@id='landing-cta']/div/button")).click();
-        Thread.sleep(1000);
 
         String currentUrl = driver.getCurrentUrl();
 
@@ -40,8 +47,17 @@ public class Home {
     }
 
     @Test
-    void DownloadButton2() {
+    void DownloadButton2() throws InterruptedException {
+        //Change path depending on your file directory
+        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File[] files = downloadDir.listFiles();
+
         driver.findElement(By.xpath("//*[@id='about']/div/div[3]/a")).click();
+        Thread.sleep(1000);
+
+        File[] afterFiles = downloadDir.listFiles();
+
+        Assert.assertEquals(afterFiles.length, files.length + 1);
     }
 
     @Test 
