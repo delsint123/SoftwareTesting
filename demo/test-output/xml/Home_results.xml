@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestNGTest-9ae1944a-85a7-441b-a7b4-620b54d282c2"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.286">
+    <properties></properties>
+
+
+
+            <testcase
+                name="DownloadButton"
+                time="0.286"
+                classname="Home">
+            </testcase>
+</testsuite>
