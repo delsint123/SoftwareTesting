@@ -1,39 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestNGTest-55bce95e-539c-4f41-999d-cd1d5cdcdbdd"
+<testsuite name="TestNGTest-b25aa9e0-16e5-4c17-8408-4585ba01b224"
            tests="1"
-           failures="1"
+           failures="0"
            errors="0"
            skipped="0"
-           time="1.441">
+           time="57.952">
     <properties></properties>
+
+
 
             <testcase
                 name="testDiscoverLinks"
-                time="1.441"
+                time="57.952"
                 classname="Discover">
-
-            <failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class, &apos;listName-GkVhEs&apos;) and contains(text(), &apos;Fusionist&apos;)]&quot;}
-  (Session info: chrome=123.0.6312.107)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.3.1&apos;, java.version: &apos;17.0.10&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a64c3b446c55bc13021a1e76aa15ac99, findElement {using=xpath, value=//div[contains(@class, &apos;listName-GkVhEs&apos;) and contains(text(), &apos;Fusionist&apos;)]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.107, chrome: {chromedriverVersion: 122.0.6261.111 (9d4c1072da6..., userDataDir: /var/folders/yd/0yy3b29x5kx...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60723}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:60723/devtoo..., se:cdpVersion: 123.0.6312.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a64c3b446c55bc13021a1e76aa15ac99">
-                <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@class, 'listName-GkVhEs') and contains(text(), 'Fusionist')]"}
-  (Session info: chrome=123.0.6312.107)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.3.1', java.version: '17.0.10'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a64c3b446c55bc13021a1e76aa15ac99, findElement {using=xpath, value=//div[contains(@class, 'listName-GkVhEs') and contains(text(), 'Fusionist')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.107, chrome: {chromedriverVersion: 122.0.6261.111 (9d4c1072da6..., userDataDir: /var/folders/yd/0yy3b29x5kx...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60723}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:60723/devtoo..., se:cdpVersion: 123.0.6312.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a64c3b446c55bc13021a1e76aa15ac99
-                java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Unknown Source)java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)Discover.testDiscoverLinks(Discover.java:45)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)java.base/java.lang.reflect.Method.invoke(Unknown Source)org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)java.base/java.util.ArrayList.forEach(Unknown Source)org.testng.TestRunner.privateRun(TestRunner.java:819)org.testng.TestRunner.run(TestRunner.java:619)org.testng.SuiteRunner.runTest(SuiteRunner.java:443)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)org.testng.SuiteRunner.run(SuiteRunner.java:336)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)org.testng.TestNG.runSuitesLocally(TestNG.java:1228)org.testng.TestNG.runSuites(TestNG.java:1134)org.testng.TestNG.run(TestNG.java:1101)com.microsoft.java.test.runner.testng.TestNGRunner.run(TestNGRunner.java:45)com.microsoft.java.test.runner.testng.TestNGLauncher.execute(TestNGLauncher.java:32)com.microsoft.java.test.runner.Launcher.main(Launcher.java:57)
-]]>
-            </failure>
-    </testcase>
-
-
+            </testcase>
 </testsuite>
