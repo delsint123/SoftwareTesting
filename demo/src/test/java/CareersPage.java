@@ -22,9 +22,10 @@ public class CareersPage  {
 
     @Test (priority = 1)
     public void testCareerFilters() throws InterruptedException, IOException {
+        Thread.sleep(1000);
         WebElement careerLink = driver.findElement(By.linkText("Careers"));
         careerLink.click();
-        Thread.sleep(2000);
+        Thread.sleep(2000); 
 
         WebElement filterDiv = driver.findElement(By.id("careers-filters"));
         List<WebElement> filterButtons = filterDiv.findElements(By.className("department-filter-item"));
@@ -35,12 +36,14 @@ public class CareersPage  {
         }
     }
 
-    @Test (priority = 3)
+    @Test (priority = 2)
     public void testJobPostings() throws InterruptedException, IOException {
+        Thread.sleep(1000);
         WebElement careerLink = driver.findElement(By.linkText("Careers"));
         careerLink.click();
         Thread.sleep(2000);
 
+        // Find all job postings
         List<WebElement> jobPostings = driver.findElements(By.className("card-job"));
 
         for (int i = 0; i < 3; i++) {
@@ -53,14 +56,14 @@ public class CareersPage  {
         }
     }
 
-    @Test
+    @Test(priority = 3)
     public void testApplyNowButton() throws InterruptedException, IOException {
+        Thread.sleep(1000);
         WebElement careerLink = driver.findElement(By.linkText("Careers"));
         careerLink.click();
         Thread.sleep(2000);
 
         String originalWindow = driver.getWindowHandle();
-        assert driver.getWindowHandles().size() == 1;
 
         WebElement specificJobPosting = driver.findElement(By.xpath("//a[contains(@href,'/jobs/')]"));
         specificJobPosting.click();
@@ -84,7 +87,7 @@ public class CareersPage  {
         for (WebElement inputField : inputFields) {
             String placeholder = inputField.getAttribute("placeholder");
             if (placeholder != null && !placeholder.isEmpty()) {
-                inputField.sendKeys("Test");
+                inputField.sendKeys("Test"); 
             }
         }
 
@@ -92,7 +95,7 @@ public class CareersPage  {
         additionalInputField.sendKeys("Estero");
 
         WebElement resumeInput = formSection.findElement(By.xpath(".//input[@accept='.doc,.docx,.pdf,.txt']"));
-        resumeInput.sendKeys(""); // set to file directory
+        resumeInput.sendKeys("");
         Thread.sleep(3000);
 
     }

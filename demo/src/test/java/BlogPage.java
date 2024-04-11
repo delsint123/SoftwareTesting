@@ -1,10 +1,15 @@
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import java.util.List;
+import org.testng.annotations.*;
+
 import java.io.IOException;
-import com.beust.ah.A;
+import java.time.Duration;
+import java.util.List;
 
 public class BlogPage {
     WebDriver driver = new ChromeDriver();
@@ -21,7 +26,7 @@ public class BlogPage {
         driver.quit();
     }
 
-    @Test
+    @Test(priority = 2)
     public void testBlogDropdown() throws InterruptedException, IOException {
         WebElement blogLink = driver.findElement(By.linkText("Blog"));
         blogLink.click();
@@ -42,19 +47,23 @@ public class BlogPage {
         }
     }
 
-    @Test
+    @Test(priority = 1)
     public void testBlogPosts() throws InterruptedException, IOException {
         WebElement blogLink = driver.findElement(By.linkText("Blog"));
         blogLink.click();
-        WebElement featuredLink = driver.findElement(By.cssSelector("a.blog-nav-item:nth-child(2)"));
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+
+        WebElement featuredLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a.blog-nav-item:nth-child(2)")));
         featuredLink.click();
+
 
         List<WebElement> featuredBlogs = driver.findElements(By.className("blog-featured-title"));
         for (WebElement element : featuredBlogs) {
             element.click();
             Thread.sleep(2000);
             Assert.assertNotEquals(driver.getCurrentUrl(), "https://discord.com/blog-featured");
-            driver.navigate().back();
+            driver.navigate().back(); // Navigate back to the previous page
         }
 
 

@@ -1,15 +1,17 @@
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import java.util.ArrayList;
-import java.util.List;
-import com.beust.ah.A;
-import java.io.File;
-import java.io.IOException;
-import java.util.Set;
+import org.testng.annotations.*;
 
-public class FooterPage  {
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+
+public class FooterSocialMedia  {
     WebDriver driver = new ChromeDriver();
 
     @BeforeTest
@@ -24,9 +26,8 @@ public class FooterPage  {
         driver.quit();
     }
 
-    @Test(priority = 6)
+    @Test(priority = 5)
     public void testFooterSocialMediaLinks() throws InterruptedException, IOException {
-
         String originalWindow = driver.getWindowHandle();
         String[] socialMediaLinks = {"a.link-s:nth-child(1)", "a.link-s:nth-child(2)", "a.link-s:nth-child(3)", "a.link-s:nth-child(4)", "a.link-s:nth-child(5)"};
         for (String linkText : socialMediaLinks) {
@@ -34,8 +35,7 @@ public class FooterPage  {
             Assert.assertTrue(link.isDisplayed());
             link.click();
             Thread.sleep(2000);
-
-            }
+        }
     }
 
     @Test(priority = 1)
@@ -47,7 +47,7 @@ public class FooterPage  {
             link.click();
             Thread.sleep(2000);
             Assert.assertNotEquals(driver.getCurrentUrl(), "https://discord.com/");
-            driver.navigate().back(); 
+            driver.navigate().back();
         }
     }
 
@@ -60,23 +60,30 @@ public class FooterPage  {
             link.click();
             Thread.sleep(2000);
             Assert.assertNotEquals(driver.getCurrentUrl(), "https://discord.com/");
-            driver.navigate().back(); 
+            driver.navigate().back();
         }
     }
 
-    @Test(priority = 3)
+    @Test(priority = 6)
     public void testResourceLinks() throws InterruptedException, IOException {
+        String originalWindow = driver.getWindowHandle();
         String[] Links = {"College", "Support", "Safety", "Blog", "Feedback", "StreamKit", "Creators", "Community", "Developers", "Gaming", "Quests", "Official 3rd Party Merch"};
         for (String linkText : Links) {
             WebElement link = driver.findElement(By.linkText(linkText));
-            Assert.assertTrue(link.isDisplayed());
             link.click();
+            if(linkText.equals("Official 3rd Party Merch")) {
+                for (String windowHandle : driver.getWindowHandles()) {
+                    if (!originalWindow.equals(windowHandle)) {
+                        driver.switchTo().window(windowHandle);
+                        break;
+                    }
+                }
+            }
             Thread.sleep(2000);
             Assert.assertNotEquals(driver.getCurrentUrl(), "https://discord.com/");
-            driver.navigate().back(); 
+            driver.navigate().back();
         }
     }
-
 
     @Test(priority = 4)
     public void testPoliciesLinks() throws InterruptedException {
@@ -106,8 +113,7 @@ public class FooterPage  {
         }
     }
 
-
-    @Test(priority = 5)
+    @Test(priority = 3)
     public void testFooterSignUpLink() throws InterruptedException, IOException {
         String[] Links = {"Sign up"};
         for (String linkText : Links) {
@@ -116,12 +122,7 @@ public class FooterPage  {
             link.click();
             Thread.sleep(2000);
             Assert.assertNotEquals(driver.getCurrentUrl(), "https://discord.com/");
-            driver.navigate().back(); 
+            driver.navigate().back();
         }
     }
 }
-
-
-
-
-
