@@ -27,9 +27,9 @@ public class Download {
     @Test
     void MainDownloadButton() throws InterruptedException {
         //Change path depending on your file directory
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
-        
+
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/a")).click();
         Thread.sleep(2000);
 
@@ -66,9 +66,9 @@ public class Download {
     @Test
     void LinuxDownloadDeb() throws InterruptedException{
         //Change path depending on your file directory
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
-        
+
         driver.findElement(By.id("w-dropdown-toggle-1")).click();
         driver.findElement(By.linkText("deb")).click();
         Thread.sleep(1000);
@@ -81,9 +81,9 @@ public class Download {
     @Test
     void LinuxDownloadTar() throws InterruptedException{
         //Change path depending on your file directory
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
-        
+
         driver.findElement(By.id("w-dropdown-toggle-1")).click();
         driver.findElement(By.linkText("tar.gz")).click();
         Thread.sleep(1000);
@@ -96,9 +96,9 @@ public class Download {
     @Test
     void MacDownload() throws InterruptedException {
         //Change path depending on your file directory
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
-        
+
         driver.findElement(By.xpath("//*[@id='w-node-_9166b1b0-317d-eb0d-5442-4e710ccfcbcf-735ece3e']/a")).click();
         Thread.sleep(1000);
 
@@ -109,7 +109,7 @@ public class Download {
 
     @Test
     void ExperimentalDownloadsMac() throws InterruptedException{
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
 
         driver.findElement(By.id("w-dropdown-toggle-2")).click();
@@ -123,7 +123,7 @@ public class Download {
 
     @Test
     void ExperimentalDownloadsLinuxDeb() throws InterruptedException{
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
 
         driver.findElement(By.id("w-dropdown-toggle-2")).click();
@@ -136,7 +136,7 @@ public class Download {
 
     @Test
     void ExperimentalDownloadsLinuxTar() throws InterruptedException{
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
 
         driver.findElement(By.id("w-dropdown-toggle-2")).click();
@@ -149,7 +149,7 @@ public class Download {
 
     @Test
     void ExperimentalDownloadsWindows32() throws InterruptedException{
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
 
         driver.findElement(By.id("w-dropdown-toggle-2")).click();
@@ -162,7 +162,7 @@ public class Download {
 
     @Test
     void ExperimentalDownloadsWindows64() throws InterruptedException{
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
 
         driver.findElement(By.id("w-dropdown-toggle-2")).click();
@@ -175,7 +175,7 @@ public class Download {
 
     @Test
     void ExperimentalDownloadsWindows64Canary() throws InterruptedException{
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
 
         driver.findElement(By.id("w-dropdown-toggle-2")).click();
@@ -186,9 +186,9 @@ public class Download {
         Assert.assertEquals(afterFiles.length, files.length + 1);
     }
 
-    @Test 
+    @Test
     void ArchiveDownload() throws InterruptedException{
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
 
         driver.findElement(By.xpath("//*[@id='w-node-b8a70b01-fcca-327e-3efa-26d66c1ad806-735ece3e']/div[2]/a")).click();

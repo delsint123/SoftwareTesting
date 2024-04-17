@@ -26,9 +26,9 @@ public class Home {
     @Test
     void DownloadButton() throws InterruptedException {
         //Change path depending on your file directory
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
-        
+
         driver.findElement(By.xpath("//*[@id='landing-cta']/div/a")).click();
 
         File[] afterFiles = downloadDir.listFiles();
@@ -37,7 +37,7 @@ public class Home {
     }
 
     @Test
-    //need to be logged in to conduct this test
+        //need to be logged in to conduct this test
     void OpenInBrowser() throws InterruptedException {
         driver.findElement(By.xpath("//*[@id='landing-cta']/div/button")).click();
 
@@ -49,7 +49,7 @@ public class Home {
     @Test
     void DownloadButton2() throws InterruptedException {
         //Change path depending on your file directory
-        File downloadDir = new File("C:/Users/delsi/Downloads");
+        File downloadDir = new File("C:/Users/Gymbo/Downloads");
         File[] files = downloadDir.listFiles();
 
         driver.findElement(By.xpath("//*[@id='about']/div/div[3]/a")).click();
@@ -60,14 +60,14 @@ public class Home {
         Assert.assertEquals(afterFiles.length, files.length + 1);
     }
 
-    @Test 
+    @Test
     void DownloadText() {
         String text = driver.findElement(By.xpath("//*[@id='landing-cta']/div/a")).getText();
 
         Assert.assertEquals(text, "Download for Windows");
     }
 
-    @Test 
+    @Test
     void DownloadText2() {
         driver.findElement(By.xpath("//*[@id='about']/div/div[3]/a")).click();
 

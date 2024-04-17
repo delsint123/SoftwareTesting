@@ -15,7 +15,6 @@ public class Discover {
 
     @BeforeTest
     public void setUp() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://discord.com");
         Thread.sleep(2000);

@@ -15,10 +15,9 @@ public class Safety {
 
     @BeforeTest
     public void setUp() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-        driver = new ChromeDriver();
         driver.get("https://discord.com");
         Thread.sleep(2000);
+        driver.manage().window().maximize();
     }
 
     @AfterTest

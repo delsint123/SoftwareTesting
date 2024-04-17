@@ -22,10 +22,11 @@ public class CareersPage  {
 
     @Test (priority = 1)
     public void testCareerFilters() throws InterruptedException, IOException {
+        // Test blog page
         Thread.sleep(1000);
         WebElement careerLink = driver.findElement(By.linkText("Careers"));
         careerLink.click();
-        Thread.sleep(2000); 
+        Thread.sleep(2000); // Wait for the page to load
 
         WebElement filterDiv = driver.findElement(By.id("careers-filters"));
         List<WebElement> filterButtons = filterDiv.findElements(By.className("department-filter-item"));
@@ -50,8 +51,8 @@ public class CareersPage  {
             jobPostings = driver.findElements(By.className("card-job"));
             WebElement jobPosting = jobPostings.get(i);
 
-            jobPosting.click(); 
-            Thread.sleep(2000); 
+            jobPosting.click(); // Click on the job posting
+            Thread.sleep(2000); // Wait for the page to load after clicking the job posting
 
         }
     }
@@ -67,7 +68,7 @@ public class CareersPage  {
 
         WebElement specificJobPosting = driver.findElement(By.xpath("//a[contains(@href,'/jobs/')]"));
         specificJobPosting.click();
-        Thread.sleep(2000); 
+        Thread.sleep(2000); // Wait for the page to load
 
         for (String windowHandle : driver.getWindowHandles()) {
             if (!originalWindow.equals(windowHandle)) {
@@ -79,7 +80,7 @@ public class CareersPage  {
         WebElement applyContainer = driver.findElement(By.className("ctaContainer-3FbgNU"));
         WebElement applyNowButton = applyContainer.findElement(By.xpath(".//button[contains(text(),'Apply Now')]"));
         applyNowButton.click();
-        Thread.sleep(2000); 
+        Thread.sleep(2000); // Wait for the page to load after clicking the "Apply Now" button
 
         WebElement formSection = driver.findElement(By.className("formSection-333K0P"));
 
@@ -87,7 +88,7 @@ public class CareersPage  {
         for (WebElement inputField : inputFields) {
             String placeholder = inputField.getAttribute("placeholder");
             if (placeholder != null && !placeholder.isEmpty()) {
-                inputField.sendKeys("Test"); 
+                inputField.sendKeys("Test"); // Replace "Test" with appropriate values
             }
         }
 
@@ -95,7 +96,7 @@ public class CareersPage  {
         additionalInputField.sendKeys("Estero");
 
         WebElement resumeInput = formSection.findElement(By.xpath(".//input[@accept='.doc,.docx,.pdf,.txt']"));
-        resumeInput.sendKeys("");
+        resumeInput.sendKeys("C:\\Users\\Gymbo\\Desktop\\TestResume.docx");
         Thread.sleep(3000);
 
     }

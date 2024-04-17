@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
-public class FooterSocialMedia  {
+public class FooterPage  {
     WebDriver driver = new ChromeDriver();
 
     @BeforeTest

@@ -12,8 +12,8 @@ public class Navbar {
 
     @BeforeTest
     public void setUp() {
-        driver = new ChromeDriver();
         driver.get("https://discord.com");
+        driver.manage().window().maximize();
     }
 
     @AfterTest

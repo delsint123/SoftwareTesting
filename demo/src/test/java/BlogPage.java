@@ -28,6 +28,7 @@ public class BlogPage {
 
     @Test(priority = 2)
     public void testBlogDropdown() throws InterruptedException, IOException {
+        // Test blog page
         WebElement blogLink = driver.findElement(By.linkText("Blog"));
         blogLink.click();
 
@@ -36,6 +37,7 @@ public class BlogPage {
         String[] links = {"Community", "Discord HQ", "Engineering & Developers", "How to Discord", "Policy & Safety", "Product & Features"};
 
         for (String linkText : links) {
+            // Find the link element inside the dropdown by its text
             WebElement link = driver.findElement(By.linkText(linkText));
             Assert.assertTrue(link.isDisplayed());
             link.click();
@@ -49,22 +51,26 @@ public class BlogPage {
 
     @Test(priority = 1)
     public void testBlogPosts() throws InterruptedException, IOException {
+
+
         WebElement blogLink = driver.findElement(By.linkText("Blog"));
         blogLink.click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement featuredLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a.blog-nav-item:nth-child(2)")));
         featuredLink.click();
 
-
         List<WebElement> featuredBlogs = driver.findElements(By.className("blog-featured-title"));
-        for (WebElement element : featuredBlogs) {
+        for (int i = 0; i < featuredBlogs.size(); i++) {
+            List<WebElement> refreshedBlogs = driver.findElements(By.className("blog-featured-title"));
+            WebElement element = refreshedBlogs.get(i);
             element.click();
             Thread.sleep(2000);
             Assert.assertNotEquals(driver.getCurrentUrl(), "https://discord.com/blog-featured");
             driver.navigate().back(); // Navigate back to the previous page
         }
+
 
 
         List<WebElement> smallBlogs = driver.findElements(By.className("blog-featured-title-small"));
